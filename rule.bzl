@@ -10,7 +10,7 @@ def _impl(ctx):
         "//conditions:default": "33a9dd142d0497375db42b055bd90780f9d92047a19edc8891e6232e2b5bdba7",
     })
 
-    libtorch = download_and_extract(url, "libtorch", sha256)
+    libtorch = ctx.download_and_extract(url, "libtorch", sha256)
 
     ctx.file("WORKSPACE", content = "")
     ctx.file("BUILD", content = """
