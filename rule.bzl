@@ -1,5 +1,5 @@
 def _impl(ctx):
-    libtorch = ctx.download_and_extract(select({
+    libtorch = ctx.download_and_extract(url = select({
         "@bazel_tools//src/conditions:windows": "https://download.pytorch.org/libtorch/cpu/libtorch-win-shared-with-deps-1.4.0.zip",
         "@bazel_tools//src/conditions:darwin": "https://download.pytorch.org/libtorch/cpu/libtorch-macos-1.4.0.zip",
         "//conditions:default": "https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.4.0%2Bcpu.zip",
